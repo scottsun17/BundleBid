@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initiaal-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>BundleBid</title>
+    
+    
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="#" class="logo link-item">BundleBid</a>
+            </div>
+            <div class="nav-right">
+                <form action="#" class="search-form">
+                    <input type="text" id="search-input" placeholder="Search here..">
+                    <input type="submit" id="search-btn" value="Search">
+                </form>
+                <div class="user-nav">
+                    <a href="" class="link" id="login-link">login</a>
+                    <a href="" class="link" id="signup-link">Signup</a>
+                </div>
+            </div>
+            <div class="nav-toggle-btn" onclick="openNav()">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="nav-toggle-icon">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        function openNav(){
+            document.querySelector('.nav-container').classList.toggle('show-nav')
+        }
+    </script>
+
+</body>
+
+
+</html>

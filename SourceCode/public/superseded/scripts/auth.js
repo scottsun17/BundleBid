@@ -51,8 +51,8 @@ signupForm.addEventListener('submit', (e) => {
             email: signupForm['signup-email'].value,
             name: signupForm['signup-name'].value,
             dob: signupForm['signup-dob'].value,
-            phone: signupForm['signup-phone'].value,
-            seller: signupForm['signup-seller'].value
+            phone: signupForm['signup-phone'].value
+
         });
         
     }).then(() => {

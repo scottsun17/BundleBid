@@ -36,25 +36,20 @@ auth.onAuthStateChanged(user => {
 const updateForm = document.querySelector('#update-form');
 updateForm.addEventListener('submit', (e) => {
     e.preventDefault();
-
+    
     auth.onAuthStateChanged(user => {
-        //console.log(user.uid);
-        if (user) {
-            db.collection('users').doc(user.uid).update({
+        console.log(user.uid);
+        if(user) {
+            db.collection('users').doc(user.uid).set({
 
                 email: updateForm['update-email'].value,
                 name: updateForm['update-name'].value,
                 dob: updateForm['update-dob'].value,
                 phone: updateForm['update-phone'].value
-            }).then(function(){
-                
-                window.location.href ="index.html";
-            })
 
+            })
         } else {
             updateAccountInfo();
         }
-
-        
     })
 });
