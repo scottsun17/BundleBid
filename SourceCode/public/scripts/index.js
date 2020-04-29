@@ -15,7 +15,7 @@ const setupUI = (user) => {
       const html = `
         <div>Email: ${user.email}</div>
         <div>Name: ${doc.data().name}</div>
-        <div>Date of Birth: ${doc.data().dob}</div>
+        <div type="date">Date of Birth: ${new Date(doc.data().dob).toLocaleDateString()}</div>
         <div>Phone Number: ${doc.data().phone}</div>
         <br />
         <a href="account.html"><button class="btn yellow darken-2 z-depth-0" id="update-account">Update</button></a>

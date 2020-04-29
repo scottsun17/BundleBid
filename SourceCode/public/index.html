@@ -283,7 +283,6 @@
     position: relative;
     opacity: 1;
   }
-
 </style>
 
 
@@ -444,37 +443,42 @@
       <div class="modal-content">
         <h4>Sign up</h4><br />
         <form id="signup-form">
-          <div >
-            <input type="email" id="signup-email" required autocomplete="off" />
+          <div class="input-field">
+            <input type="email" id="signup-email" required autocomplete="off" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" class="validate"/>
             <label for="signup-email">Email address</label>
+            <span class="helper-text" data-error="Please enter a valid email address"></span>
           </div>
-          <div >
-            <input type="password" id="signup-password" required autocomplete="off" />
-            <label for="signup-password">Choose password</label>
+          <div class="input-field">
+            <input type="password" id="signup-password" required autocomplete="off"
+              pattern="(?=^.{6,10}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$" class="validate" />
+            <label for="signup-password">Password</label>
+              <span class="helper-text" data-error="Password must contain at least one capital letter, one number, one special character and be between the length of 6 to 10 characters." data-success="Valid"></span>
           </div>
-          <div >
-            <input type="text" id="signup-name" required />
+          <div class="input-field">
+            <input type="text" id="signup-name" required maxlength="50" class="validate"/>
             <label for="signup-name">Your Name</label>
           </div>
-          <div >
-            <input type="text" id="signup-dob" required />
+          <div class="input-field">
+            <input type="date" id="signup-dob" required class="validate"/>
             <label for="signup-dob">Date of Birth mm/dd/yyyy</label>
           </div>
-          <div >
-            <input type="text" id="signup-phone" required />
-            <label for="signup-phone">Mobile Number</label>
+          <div class="input-field">
+            <input type="text" id="signup-phone" required
+              pattern="^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$" class="validate"/>
+            <label for="signup-phone">Mobile Number (123-456-7890)</label>
+            <span class="helper-text" data-error="You must enter a valid U.S. phone number in the format of 1234567890 or 123-456-7890"></span>
           </div>
-
-          <div >
+          <div>
             <label>Would you like to sell on BundleBid?</label>
-
-            <input id="signup-seller" type="radio" value="1"/>
+            <input id="signup-seller" type="radio" value="1" />
             <label for="signup-seller">Yes</label>
 
-            <input id="signup-seller" type="radio" Value="0"/>
+            <input id="signup-seller" type="radio" Value="0" />
             <label for="choice_2">No</label>
-
           </div>
+
+
+
           <button class="btn yellow darken-2 z-depth-0">Sign up</button>
           <p class="error pink-text center-align"></p>
         </form>
@@ -522,6 +526,17 @@
 
       </ul>
     </div>
+
+    <script>
+
+
+    </script>
+
+
+
+
+
+
     <!-- COPY THIS PART TO ACESS FIREBASE -->
     <!-- Compiled and minified JavaScript -->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
